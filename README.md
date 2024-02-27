@@ -1,7 +1,5 @@
-Project Name
+Classification of Arrhythmia
 ==============================
-
-This repo is a Starting Pack for DS projects. You can rearrange the structure to make it fits your project.
 
 Project Organization
 ------------
@@ -41,5 +39,3 @@ Project Organization
     │   │   └── visualize.py
 
 --------
-
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
