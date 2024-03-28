@@ -97,53 +97,6 @@ def set_styles():
         "axes.prop_cycle": combined_cycle
     })
 
-
-
-def plot_confusion_matrix(y_true, y_pred, title=None, labels=None):
-    cm = confusion_matrix(y_true, y_pred)
-    total_samples = np.sum(cm)
-    percentages = (cm.T / np.sum(cm, axis=1)).T * 100
-    annotations = [[f'({cm[i, j]})\n{percentages[i, j]:.2f}%' for j in range(len(cm))] for i in range(len(cm))]
-    if labels is None:
-        labels = [str(i) for i in range(len(cm))]
-    sns.heatmap(cm, annot=annotations, fmt='', cmap='binary', cbar=False,
-                xticklabels=labels, yticklabels=labels)
-    plt.xlabel('Predicted Labels')
-    plt.ylabel('True Labels')
-    if title:
-        plt.title(title)
-    plt.show()
-
-def plot_confusion_matrices_side_by_side(model_name, data, titles, labels=None):
-    num_matrices = len(data)
-    fig, ax = plt.subplots(1, num_matrices, figsize=(7 * num_matrices, 7))
-    fig.subplots_adjust(wspace=0.5) 
-
-    def add_labels_and_percentages(conf_matrix, ax):
-        total_samples = np.sum(conf_matrix)
-        group_names = ['True Neg', 'False Pos', 'False Neg', 'True Pos']
-        labels = [f'{name}\n{count}\n{count/total_samples:.2%}' for name, count in zip(group_names, conf_matrix.flatten())]
-        labels = np.asarray(labels).reshape(2, 2)
-        sns.heatmap(conf_matrix, annot=labels, fmt='', cmap='binary', ax=ax,
-                    annot_kws={'size': 14, 'fontweight': 'normal'}, cbar=False,
-                    xticklabels=['0', '1'], yticklabels=['0', '1']) 
-
-    for i, (y_true, y_pred) in enumerate(data):
-        conf_matrix = confusion_matrix(y_true, y_pred, labels=labels)
-        ax[i].set_title(titles[i], fontsize=14, fontweight='bold')
-        add_labels_and_percentages(conf_matrix, ax[i])
-
-        ax[i].set_xlabel('Predicted labels', fontsize=14)  
-        ax[i].set_ylabel('True labels', fontsize=14) 
-        for tick in ax[i].xaxis.get_major_ticks():
-            tick.label.set_fontsize(10) 
-        for tick in ax[i].yaxis.get_major_ticks():
-            tick.label.set_fontsize(10)  
-
-    fig.suptitle(model_name, fontsize=18, fontweight='bold', y=1.05, ha='center')
-    plt.show()
-
-
 # Function to perform randomized hyperparameter search
 def perform_randomized_search(clf, param_grid, X_train, y_train, X_test, y_test):
     scoring = {'recall': make_scorer(recall_score)}
