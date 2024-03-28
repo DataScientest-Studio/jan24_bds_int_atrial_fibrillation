@@ -25,9 +25,7 @@ from IPython.display import display
 def set_custom_palette(palette_name):
     if palette_name == "grayscale":
         # Define your grayscale color palette
-        grayscale_palette = ['black', '0.8', '0.6', '0.4', '0.2', '0.1', '0.7', '0.3']
-        # Set the grayscale palette
-        sns.set_palette(grayscale_palette)
+
     elif palette_name == "colorblind":
         # Define your colorblind-safe color palette
         colorblind_palette = sns.color_palette("colorblind")
