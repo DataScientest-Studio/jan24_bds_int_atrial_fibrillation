@@ -59,8 +59,3 @@ The strong performance of models such as Gradient Boosting, XGBoost, and Random 
 [3] Moody, G. B., & Mark, R. G. (2001). The impact of the MIT-BIH Arrhythmia Database. IEEE Engineering in Medicine and Biology Magazine, 20(3), 45-50.
 [4] Sakib, S., Fouda, M. M., & Fadlullah, Z. M. (2021). Harnessing Artificial Intelligence for Secure ECG Analytics at the Edge for Cardiac Arrhythmia Classification. In Secure Edge Computing (1st ed., pp. 17). CRC Press. ISBN: 9781003028635.
 
-
-    │   ├── visualization  <- Scripts to create exploratory and results oriented visualizations
-    │   │   └── visualize.py
-
---------
