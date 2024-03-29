@@ -8,7 +8,9 @@ This project aims to develop a machine learning model that can detect the presen
 ## Project Organization
 
 ├── README.md          <- The top-level README for developers using this project.
+
 ├── notebooks          <- This folder contains all scripts as jupyter notebooks needed for data analysis and preprocessing, training and testing of models and model interpretation analysis and corresponding visualizations for both the UCI-Bilkent dataset (1A and 1B) and the MIT-BIH dataset (2A, 2B and 2C) respectively.
+
 ├── reports            <- This folder contains the final project report including all figures in a separate subfolder. 
 
 ## Datasets
